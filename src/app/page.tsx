@@ -11,11 +11,16 @@ export default function Home() {
       <PremiumHeader />
       <main className="flex-1">
         <PremiumHero />
-        <div className="container mt-12">
-          <PremiumComparisonCard />
+        {/* Large spacer to push rest of content far below the hero */}
+        <div className="h-[700px] md:h-[900px]" aria-hidden="true" />
+        {/* Group remaining sections with generous vertical spacing */}
+        <div className="space-y-32">
+          <div className="container">
+            <PremiumComparisonCard />
+          </div>
+          <PremiumWhyChoose />
+          <PremiumHowItWorks />
         </div>
-        <PremiumWhyChoose />
-        <PremiumHowItWorks />
       </main>
       <UnimoneyFooter />
     </div>

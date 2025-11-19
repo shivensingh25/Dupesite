@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function PremiumHero() {
   return (
-    <section className="relative overflow-hidden section surface-blush">
+    //parent 
+    <section className="relative overflow-hidden min-h-screen flex items-center section surface-blush">
       {/* subtle decorative blobs */}
       <div className="blob blush w-[220px] h-[220px] top-10 left-[-60px]" />
       <div className="blob lavender w-[260px] h-[260px] bottom-[-60px] right-[-40px]" />
@@ -32,7 +33,7 @@ export default function PremiumHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="flex items-center justify-center gap-3"
+          className="flex items-center justify-center gap-3 mt-4"
         >
           <Link href="/compare" className="btn btn-primary">Start Comparing</Link>
           <Link href="/about" className="btn btn-outline">Learn More</Link>

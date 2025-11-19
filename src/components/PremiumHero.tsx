@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function PremiumHero() {
   return (
-    //parent 
+    //parent h
     <section className="relative overflow-hidden min-h-screen flex items-center section surface-blush">
       {/* subtle decorative blobs */}
       <div className="blob blush w-[220px] h-[220px] top-10 left-[-60px]" />

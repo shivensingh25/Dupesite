@@ -5,13 +5,25 @@ import Link from "next/link";
 
 export default function PremiumHero() {
   return (
-    //parent hh
+    //sectiojn is the full width background 
+    // section (parent)
+// ├── div.blob (child)
+// ├── div.blob (child)  
+// └── div.container (child, but also parent to below)
+//     ├── motion.h1 (child)
+//     ├── motion.p (child)
+//     └── motion.div (child, but also parent to below)
+//         ├── Link "Start Comparing" (child)
+//         └── Link "Learn More" (child)
+    
+    
     <section className="relative overflow-hidden min-h-screen flex items-center section surface-blush">
       {/* subtle decorative blobs */}
       <div className="blob blush w-[220px] h-[220px] top-10 left-[-60px]" />
       <div className="blob lavender w-[260px] h-[260px] bottom-[-60px] right-[-40px]" />
 
-      <div className="container text-center relative z-10">
+      <div className="container text-center relative z-10">  {/* This is the container and limits content width and centers it */}
+       {/* These are the children inside container */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

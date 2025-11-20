@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function PremiumHero() {
   return (
     //sectiojn is the full width background 
+    // children are the elements/components nested inside a parent element in React/HTML.
     // section (parent)
 // ├── div.blob (child)
 // ├── div.blob (child)  

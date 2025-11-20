@@ -64,7 +64,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <PremiumHeader />
       <main className="flex-1"> 
-        {/* The <main> element represents the primary content of a webpage., there should only be 1 main element  */}
+        {/* The <main> element represents the primary content of a webpage., there should only be 1 main element   */}
         <PremiumHero />
         {/* Large spacer to push rest of content far below the hero */}
         <div className="h-[700px] md:h-[900px]" aria-hidden="true" />

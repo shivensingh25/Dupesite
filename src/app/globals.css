@@ -152,6 +152,48 @@ small, .text-small {
   to { opacity: 1; }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
 .animate-fade-up {
   animation: fadeUp 0.4s ease-out;
 }
@@ -160,9 +202,40 @@ small, .text-small {
   animation: fadeIn 0.3s ease-out;
 }
 
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.animate-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #D4A5C7 0%,
+    #9B8FB8 25%,
+    #D4A5C7 50%,
+    #9B8FB8 75%,
+    #D4A5C7 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 4s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* ============================================
    CARD STYLES
    ============================================ */
+.card {
+  background: white;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
 .card-minimal {
   background: white;
   border-radius: 12px;
@@ -177,8 +250,30 @@ small, .text-small {
 }
 
 /* ============================================
+   PROGRESS BAR
+   ============================================ */
+.bar-gradient {
+  background: linear-gradient(90deg, #9B8FB8 0%, #D4A5C7 50%, #9B8FB8 100%);
+  background-size: 200% 100%;
+}
+
+.grid-gap {
+  gap: 1.5rem;
+}
+
+/* ============================================
    BADGE STYLES
    ============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+
 .badge-pastel {
   display: inline-flex;
   align-items: center;
@@ -212,6 +307,14 @@ small, .text-small {
 /* ============================================
    BUTTON STYLES
    ============================================ */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
 .btn-primary {
   padding: 0.875rem 2rem;
   border-radius: 12px;
@@ -229,6 +332,24 @@ small, .text-small {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   background: #2D2D2D;
+}
+
+.btn-outline {
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: var(--text-body);
+  background: white;
+  color: var(--charcoal);
+  border: 1.5px solid var(--stone);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: var(--charcoal);
+  background: var(--ivory);
 }
 
 .btn-secondary {
@@ -272,8 +393,71 @@ small, .text-small {
 }
 
 /* ============================================
+   SURFACE BACKGROUNDS
+   ============================================ */
+.surface-blush {
+  background: var(--blush);
+  position: relative;
+}
+
+.surface-lavender {
+  background: var(--lavender);
+  position: relative;
+}
+
+.surface-ivory {
+  background: var(--ivory);
+  position: relative;
+}
+
+/* ============================================
+   DECORATIVE BLOBS
+   ============================================ */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.blob.blush {
+  background: linear-gradient(135deg, #F7E9EF 0%, #EEE8F7 100%);
+}
+
+.blob.lavender {
+  background: linear-gradient(135deg, #EEE8F7 0%, #E3F2FD 100%);
+}
+
+.blob.mint {
+  background: linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%);
+}
+
+/* ============================================
+   BACKGROUND PATTERNS
+   ============================================ */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* ============================================
    GRID LAYOUTS
    ============================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .grid-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -291,6 +475,11 @@ small, .text-small {
   .grid-3-col {
     grid-template-columns: 1fr;
   }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /* ============================================
@@ -305,6 +494,14 @@ small, .text-small {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(135deg, #7e22ce 0%, #db2777 50%, #be185d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 
 /* ============================================

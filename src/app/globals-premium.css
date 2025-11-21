@@ -64,6 +64,14 @@ small { font-size: 14px; font-weight: 400; color: var(--muted); }
 .btn-primary { background: linear-gradient(90deg, var(--lavender), var(--blush)); }
 .btn-outline { background: white; }
 
+/* Premium animated CTA */
+.btn-cta { position:relative; background:linear-gradient(90deg,var(--lavender),var(--blush)); box-shadow:0 4px 14px rgba(0,0,0,0.08); overflow:hidden; }
+.btn-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 70%); transform:translateX(-120%); animation:sheen 3.8s linear infinite; }
+.btn-cta:hover::before { animation-duration:2.2s; }
+.btn-cta { animation: gentlePulse 7s ease-in-out infinite; }
+@keyframes sheen { 0% { transform:translateX(-120%);} 70% { transform:translateX(120%);} 100% { transform:translateX(120%);} }
+@keyframes gentlePulse { 0%,100% { filter:brightness(1); } 50% { filter:brightness(1.07); } }
+
 /* Floating gradient blobs */
 .blob { position:absolute; filter: blur(40px); opacity:.5; pointer-events:none; border-radius:9999px; animation: float 12s ease-in-out infinite; }
 .blob.blush { background: var(--blush); }
